@@ -1,0 +1,48 @@
+﻿@model List<Order>
+@{
+    ViewData["Title"] = "OrderDetails";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewBag.employeeFullName  @Model.Count Adet Siparişi vardır.</h1>
+
+</div>
+<hr />
+@if (Model.Count == 0)
+{
+
+    <h1 class="text-center">@ViewBag.employeeFullName henüz sipariş girmemiştir.</h1>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Order No</th>
+                <th scope="col">Date</th>
+                <th scope="col">Ship Country</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.OrderId</th>
+                    <td>@item.OrderDate</td>
+                    <td>@item.ShipCountry</td>
+
+
+                </tr>
+            }
+
+
+        </tbody>
+    </table>
+}
+
+<div class="col-12 justify-content-center text-center">
+    <a class="btn btn-primary btn-lg btn-block " asp-action="Index" asp-controller="Employee">Çalışanlar</a>
+</div>

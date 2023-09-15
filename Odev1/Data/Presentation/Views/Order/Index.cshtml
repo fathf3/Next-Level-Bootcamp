@@ -1,0 +1,32 @@
+﻿@model List<Order>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Ülke</th>
+            <th scope="col">Şehir</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.OrderId</th>
+                <td>@item.OrderDate</td>
+                <td>@item.ShipCountry</td>
+                <td>@item.ShipCity</td>
+                
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+

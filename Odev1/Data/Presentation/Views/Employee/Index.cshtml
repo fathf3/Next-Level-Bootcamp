@@ -1,0 +1,37 @@
+﻿@model List<Employee>
+
+@{
+    ViewData["Title"] = "Employees";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Employees</h1>
+
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Title</th>
+            <th scope="col">Orders</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.EmployeeId</th>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.Title</td>
+                <td><a class="btn btn-outline-info" href="Order/orderdetails/@item.EmployeeId"> Siparişler </a></td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>

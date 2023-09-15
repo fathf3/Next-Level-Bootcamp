@@ -1,0 +1,75 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "AddEmployee";
+}
+
+
+
+
+
+
+<form method="post" class="col-12">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+        <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="form3Example1">First name</label>
+                <input type="text" asp-for="FirstName" class="form-control" />
+
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-outline">
+                <label class="form-label" for="form3Example2">Last name</label>
+                <input type="text" asp-for="LastName" class="form-control" />
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example3">Adress</label>
+        <input type="text" asp-for="Address" class="form-control" />
+
+    </div>
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example3">Title</label>
+        <input type="text" asp-for="Title" class="form-control" />
+
+    </div>
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="form3Example4">Birth Date</label>
+        <input type="date" asp-for="BirthDate" class="form-control" />
+
+    </div>
+
+    <div class="col-12 justify-content-center text-center">
+    <button type="submit" asp-controller="Employee" asp-action="AddEmployee" class="btn btn-primary btn-block mb-4">Kaydet</button>
+
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
